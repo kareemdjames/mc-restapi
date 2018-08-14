@@ -18,6 +18,7 @@
   "homepage": "https://github.com/kareemdjames/mc-restapi#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "mongoose": "^5.2.8",
     "node-fetch": "^2.2.0",
     "uuid": "^3.3.2"
   }
