@@ -11,7 +11,7 @@ const db = mongoose
   .catch(console.error);
 
 // Parse the request as JSON
-app.unsubscribe(bodyParser.json());
+app.use(bodyParser.json());
 // Middleware that will ensure your web app is connected to MongoDB first before allowing route handlers to be executed
 app.use((req, res, next) => {
   Promise.resolve(db).then(
