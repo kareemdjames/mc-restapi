@@ -30,7 +30,7 @@ api.post("/login", isNotLogged, async (req, res) => {
       res.status(200).json({ status: "Welcome!" });
     });
   } catch (error) {
-    res.status(403).json({ error: erorr.message });
+    res.status(403).json({ error: error.message });
   }
 });
 
@@ -44,7 +44,7 @@ api.post("/signup", async (req, res) => {
     const { session, body } = req;
     const { username, password } = body;
     const user = await User.signup(username, password);
-    res.status(201).json({ status: "Created" });
+    res.status(201).json({ status: "Created!" });
   } catch (error) {
     res.status(403).json({ error: error.message });
   }
