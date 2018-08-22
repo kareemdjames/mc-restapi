@@ -1,7 +1,7 @@
 const EventEmitter = require("events");
 // Convert the returned value of process.hrtime from seconds to nanoseconds and then to milliseconds
-const NS_PER_SEC = le9;
-const NS_PER_MS = le6;
+const NS_PER_SEC = 1e9;
+const NS_PER_MS = 1e6;
 
 class Timer extends EventEmitter {
   start() {
@@ -25,7 +25,7 @@ tasks.on("start", () => {
 });
 
 //event listener to the stop event that will print the time it took for the event start to execute all its attached listeners
-tasks.on("stop", () => {
+tasks.on("stop", time => {
   console.log(`Task completed in ${time}ms`);
 });
 
