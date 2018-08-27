@@ -1,5 +1,6 @@
 const io = require("socket.io")();
-io.path("./socket.io");
+io.path("/socket.io");
+
 const root = io.of("/");
 
 root.on("connection", socket => {
@@ -10,5 +11,4 @@ root.on("connection", socket => {
     socket.emit("got time?", currentTime, counter);
   });
 });
-
 io.listen(1337);
